@@ -8,7 +8,7 @@ public class CustomStack {
     public void push(int value) {
         StackNode node = new StackNode(value);
 
-        if(isEmpty()) {
+        if (isEmpty()) {
             top = node;
         } else {
             node.next = top;
@@ -16,6 +16,19 @@ public class CustomStack {
         }
 
         length++;
+    }
+
+    public StackNode pop() {
+        if (isEmpty()) {
+            return null;
+        }
+
+        StackNode aux = top;
+        top = top.next;
+        aux.next = null;
+        length--;
+
+        return aux;
     }
 
     public StackNode getTop() {
