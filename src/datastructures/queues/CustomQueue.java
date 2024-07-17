@@ -8,7 +8,7 @@ public class CustomQueue {
     public void enqueue(int value) {
         QueueNode node = new QueueNode(value);
 
-        if(isEmpty()) {
+        if (isEmpty()) {
             first = node;
             last = node;
         } else {
@@ -17,6 +17,23 @@ public class CustomQueue {
         }
 
         length++;
+    }
+
+    public QueueNode dequeue() {
+        if(isEmpty()) {
+            return null;
+        }
+
+        QueueNode aux = first;
+        first = first.next;
+        aux.next = null;
+        length--;
+
+        if(isEmpty()) {
+            last = null;
+        }
+
+        return aux;
     }
 
     public QueueNode getFirst() {
