@@ -19,6 +19,20 @@ public class CustomLinkedList {
         size++;
     }
 
+    public void addAtEnd(int value) {
+        ListNode node = new ListNode(value);
+
+        if(isEmpty()) {
+            head = node;
+            tail = node;
+        } else {
+            tail.next = node;
+            tail = node;
+        }
+
+        size++;
+    }
+
     private boolean isEmpty() {
         return size == 0;
     }
