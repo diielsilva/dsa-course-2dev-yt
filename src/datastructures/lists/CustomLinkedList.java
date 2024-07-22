@@ -33,6 +33,20 @@ public class CustomLinkedList {
         size++;
     }
 
+    public ListNode get(int index) {
+        if(isEmpty() || index < 0 || index >= size) {
+            return null;
+        }
+
+        ListNode temp = head;
+
+        for(int i = 0; i < index; i++) {
+            temp = temp.next;
+        }
+
+        return temp;
+    }
+
     private boolean isEmpty() {
         return size == 0;
     }
