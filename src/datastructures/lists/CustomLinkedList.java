@@ -1,7 +1,5 @@
 package datastructures.lists;
 
-import java.util.List;
-
 public class CustomLinkedList {
     private ListNode head;
     private ListNode tail;
@@ -10,7 +8,7 @@ public class CustomLinkedList {
     public void addAtStart(int value) {
         ListNode node = new ListNode(value);
 
-        if(isEmpty()) {
+        if (isEmpty()) {
             head = node;
             tail = node;
         } else {
@@ -24,7 +22,7 @@ public class CustomLinkedList {
     public void addAtEnd(int value) {
         ListNode node = new ListNode(value);
 
-        if(isEmpty()) {
+        if (isEmpty()) {
             head = node;
             tail = node;
         } else {
@@ -36,13 +34,13 @@ public class CustomLinkedList {
     }
 
     public void add(int index, int value) {
-        if(index < 0 || index > size) {
+        if (index < 0 || index > size) {
             return;
         }
 
-        if(index == 0) {
+        if (index == 0) {
             this.addAtStart(value);
-        } else if(index == size) {
+        } else if (index == size) {
             this.addAtEnd(value);
         } else {
             ListNode previous = get(index - 1);
@@ -56,13 +54,13 @@ public class CustomLinkedList {
     }
 
     public ListNode get(int index) {
-        if(isEmpty() || index < 0 || index >= size) {
+        if (isEmpty() || index < 0 || index >= size) {
             return null;
         }
 
         ListNode temp = head;
 
-        for(int i = 0; i < index; i++) {
+        for (int i = 0; i < index; i++) {
             temp = temp.next;
         }
 
