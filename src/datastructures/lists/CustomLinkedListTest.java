@@ -6,10 +6,13 @@ public class CustomLinkedListTest {
 
         list.addAtEnd(10);
         list.addAtEnd(20);
-        list.addAtEnd(30);
 
-        System.out.println(list.get(-1));
-        System.out.println(list.get(3));
+        list.add(2, 30);
+        list.add(1, 15);
+
         System.out.println(list.get(1).value);
+        System.out.println(list.get(3).value);
+
+        System.out.println(list.getSize());
     }
 }
