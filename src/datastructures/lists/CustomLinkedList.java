@@ -67,6 +67,27 @@ public class CustomLinkedList {
         return temp;
     }
 
+    public ListNode removeAtStart() {
+        if(isEmpty()) {
+            return null;
+        }
+
+        if(size == 1) {
+            ListNode aux = head;
+            head = head.next;
+            aux.next = null;
+            tail = null;
+            size--;
+            return aux;
+        }
+
+        ListNode aux = head;
+        head = head.next;
+        aux.next = null;
+        size--;
+        return aux;
+    }
+
     private boolean isEmpty() {
         return size == 0;
     }
