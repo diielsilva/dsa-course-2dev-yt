@@ -7,14 +7,16 @@ public class CustomLinkedListTest {
         list.addAtEnd(10);
         list.addAtEnd(20);
         list.addAtEnd(30);
+        list.addAtEnd(40);
 
-
-        System.out.println(list.removeAtStart().value);
-        System.out.println(list.getHead().value);
+        System.out.println(list.removeAtEnd().value);
+        System.out.println(list.getTail().value);
         System.out.println(list.getSize());
 
-        System.out.println(list.removeAtStart().value);
-        System.out.println(list.removeAtStart().value);
+        list.removeAtEnd();
+        list.removeAtEnd();
+        list.removeAtEnd();
+
         System.out.println(list.getSize());
     }
 }

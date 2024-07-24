@@ -1,5 +1,7 @@
 package datastructures.lists;
 
+import java.util.List;
+
 public class CustomLinkedList {
     private ListNode head;
     private ListNode tail;
@@ -84,6 +86,27 @@ public class CustomLinkedList {
         ListNode aux = head;
         head = head.next;
         aux.next = null;
+        size--;
+        return aux;
+    }
+
+    public ListNode removeAtEnd() {
+        if(isEmpty()) {
+            return null;
+        }
+
+        if(size == 1) {
+            ListNode aux = tail;
+            head = null;
+            tail = null;
+            size--;
+            return aux;
+        }
+
+        ListNode previous = get(size - 2);
+        ListNode aux = tail;
+        previous.next = null;
+        tail = previous;
         size--;
         return aux;
     }
