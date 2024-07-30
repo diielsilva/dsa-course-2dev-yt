@@ -127,7 +127,23 @@ public class CustomLinkedList {
         previous.next = temp.next;
         temp.next = null;
         size--;
-        return temp;    }
+        return temp;
+    }
+
+    public void reverse() {
+        ListNode aux = head;
+        head = tail;
+        tail = aux;
+        ListNode after = aux.next;
+        ListNode previous = null;
+
+        for (int i = 0; i < size; i++) {
+            after = aux.next;
+            aux.next = previous;
+            previous = aux;
+            aux = after;
+        }
+    }
 
     private boolean isEmpty() {
         return size == 0;
