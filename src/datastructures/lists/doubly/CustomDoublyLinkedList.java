@@ -20,6 +20,21 @@ public class CustomDoublyLinkedList {
         size++;
     }
 
+    public void addAtEnd(int value) {
+        DoublyListNode node = new DoublyListNode(value);
+
+        if(isEmpty()) {
+            head = node;
+            tail = node;
+        } else {
+            node.previous = tail;
+            tail.next = node;
+            tail = node;
+        }
+
+        size++;
+    }
+
     private boolean isEmpty() {
         return size == 0;
     }
