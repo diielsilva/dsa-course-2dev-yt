@@ -1,4 +1,4 @@
-package datastructures.lists;
+package datastructures.lists.singly;
 
 public class CustomLinkedListTest {
     public static void main(String[] args) {

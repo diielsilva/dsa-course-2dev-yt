@@ -1,4 +1,4 @@
-package datastructures.lists;
+package datastructures.lists.singly;
 
 public class CustomLinkedList {
     private ListNode head;
