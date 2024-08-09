@@ -8,7 +8,7 @@ public class CustomDoublyLinkedList {
     public void addAtStart(int value) {
         DoublyListNode node = new DoublyListNode(value);
 
-        if(isEmpty()) {
+        if (isEmpty()) {
             head = node;
             tail = node;
         } else {
@@ -23,7 +23,7 @@ public class CustomDoublyLinkedList {
     public void addAtEnd(int value) {
         DoublyListNode node = new DoublyListNode(value);
 
-        if(isEmpty()) {
+        if (isEmpty()) {
             head = node;
             tail = node;
         } else {
@@ -33,6 +33,30 @@ public class CustomDoublyLinkedList {
         }
 
         size++;
+    }
+
+    public DoublyListNode get(int index) {
+        if (index < 0 || index >= size) {
+            return null;
+        }
+
+        if (index < size / 2) {
+            DoublyListNode aux = head;
+
+            for (int i = 0; i < index; i++) {
+                aux = aux.next;
+            }
+
+            return aux;
+        } else {
+            DoublyListNode aux = tail;
+
+            for (int i = size - 1; i > index; i--) {
+                aux = aux.previous;
+            }
+
+            return aux;
+        }
     }
 
     private boolean isEmpty() {

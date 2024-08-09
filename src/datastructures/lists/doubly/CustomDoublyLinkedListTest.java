@@ -6,16 +6,15 @@ public class CustomDoublyLinkedListTest {
         CustomDoublyLinkedList list = new CustomDoublyLinkedList();
 
         list.addAtEnd(10);
-
-        System.out.println(list.getHead().value);
-        System.out.println(list.getTail().value);
-        System.out.println(list.getSize());
-
         list.addAtEnd(20);
         list.addAtEnd(30);
+        list.addAtEnd(40);
 
-        System.out.println(list.getHead().value);
-        System.out.println(list.getTail().value);
-        System.out.println(list.getSize());
+        System.out.println(list.get(-1));
+        System.out.println(list.get(4));
+        System.out.println(list.get(0).value);
+        System.out.println(list.get(3).value);
+        System.out.println(list.get(2).value);
+
     }
 }
